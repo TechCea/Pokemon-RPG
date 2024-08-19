@@ -10,11 +10,11 @@ class Overworld {
    image.onload = () => {
      this.ctx.drawImage(image,0,0)
    };
-   image.src = "/IMG/maps/DemoLower.png";
+   image.src = "IMG/maps/DemoLower.png";
 
 
    const x = 5;
-   const y = 6;
+   const y = 7;
 
    const shadow = new Image();
    shadow.onload = () => {
@@ -24,13 +24,13 @@ class Overworld {
       0, //top cut,
       32, //width of cut
       32, //height of cut
-      x * 6 - 8,
+      x * 16 - 8,
       y * 16 - 18,
       32,
       32
    )
    }
-   shadow.src = "/IMG/characters/shadow.png";
+   shadow.src = "IMG/characters/shadow.png";
 
 
    const hero = new Image();
@@ -41,13 +41,13 @@ class Overworld {
        0, //top cut,
        32, //width of cut
        32, //height of cut
-       x * 6 - 8,
+       x * 16 - 8,
        y * 16 - 18,
        32,
        32
     )
    }
-   hero.src = "/IMG/characters/people/hero.png";
+   hero.src = "IMG/characters/people/hero.png";
 
 
  }
