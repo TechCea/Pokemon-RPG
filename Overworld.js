@@ -10,7 +10,7 @@ class Overworld {
    image.onload = () => {
      this.ctx.drawImage(image,0,0)
    };
-   image.src = "/images/maps/DemoLower.png";
+   image.src = "/IMG/maps/DemoLower.png";
 
 
    const x = 5;
@@ -30,7 +30,7 @@ class Overworld {
       32
    )
    }
-   shadow.src = "/images/characters/shadow.png";
+   shadow.src = "/IMG/characters/shadow.png";
 
 
    const hero = new Image();
@@ -47,7 +47,7 @@ class Overworld {
        32
     )
    }
-   hero.src = "/images/characters/people/hero.png";
+   hero.src = "/IMG/characters/people/hero.png";
 
 
  }
