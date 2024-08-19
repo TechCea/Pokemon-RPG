@@ -24,7 +24,7 @@ class Overworld {
       0, //top cut,
       32, //width of cut
       32, //height of cut
-      x * 16 - 8,
+      x * 6 - 8,
       y * 16 - 18,
       32,
       32
@@ -41,7 +41,7 @@ class Overworld {
        0, //top cut,
        32, //width of cut
        32, //height of cut
-       x * 16 - 8,
+       x * 6 - 8,
        y * 16 - 18,
        32,
        32
