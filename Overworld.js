@@ -21,7 +21,7 @@ class Overworld {
    const npc1 = new GameObject({
     x: 7,
     y: 9,
-    src: "IMG/characters/people/npc1.png"
+    src: "IMG/characters/people/npcpoke.png"
   })
   setTimeout(() => {
     hero.sprite.draw(this.ctx);
