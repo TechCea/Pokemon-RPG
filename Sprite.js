@@ -22,19 +22,21 @@ class Sprite{
 
         //configure animation & initial state
         this.animations = config.animations || {
-            idleDown:[
-                [0,0]
-            ],
-            walkDown:[
-                [0,0],[1,0],[2,0],[3,0],
-            ]
+            "idle-Down":[ [0,0] ],
+            "walkDown":[ [1,0],[0,0],[3,0],[0,0]]
         }
-        this.currentAnimation = config.currentAnimation || "idleDown";
+        this.currentAnimation = config.currentAnimation || "idle-Down";
         this.currentAnimationFrame = 0;
 
+        this.animationsFramelimit = config.animationFramelimit || 16;
+        this.animationFrameProgress = this.animationFramelimit;
 
         //Reference the game object
         this.gameObject = config.gameObject;    
+    }
+
+    get frame(){
+        return this.animations[this.currentAnimation]
     }
 
 
