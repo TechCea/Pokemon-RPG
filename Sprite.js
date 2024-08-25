@@ -32,10 +32,10 @@ class Sprite{
             "walk-left" : [ [1,3],[0,3],[3,3],[0,3] ]
         };
         
-        this.currentAnimation = "walk-down"; //config.currentAnimation || "idle-Down";
+        this.currentAnimation = "idle-down"; //config.currentAnimation || "idle-Down";
         this.currentAnimationFrame = 0;
 
-        this.animationFramelimit = config.animationFramelimit || 16;
+        this.animationFramelimit = config.animationFramelimit || 8;
         this.animationFrameProgress = this.animationFramelimit;
 
         //Reference the game object
