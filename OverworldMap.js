@@ -23,15 +23,15 @@ class OverworldMap {
       LowerSrc: "IMG/maps/DemoLower.png",
       UpperSrc: "IMG/maps/DemoUpper.png",
       gameObjects: {
-        hero: new GameObject({
+        hero: new Person({
           x: utils.widthGrid(3),
           y: utils.widthGrid(5),
         }),
-        //npc1: new GameObject({
-        //  x: 50,
-        //  y: 21,
-        // src: "IMG/characters/people/npcpoke.png"
-        //})
+        npc1: new Person({
+          x: utils.widthGrid(6),
+          y: utils.widthGrid(6),
+         src: "IMG/characters/people/npcpoke.png"
+        })
       }
     },
     Kitchen: {
