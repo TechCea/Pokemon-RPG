@@ -28,11 +28,11 @@ class OverworldMap {
           x: utils.widthGrid(3),
           y: utils.widthGrid(5),
         }),
-        //npc1: new Person({
-        //  x: utils.widthGrid(6),
-        // y: utils.widthGrid(6),
-        // src: "IMG/characters/people/npcpoke.png"
-        //})
+        npc1: new Person({
+          x: utils.widthGrid(6),
+          y: utils.widthGrid(6),
+         src: "IMG/characters/people/npcpoke.png"
+        })
       }
     },
     Kitchen: {
