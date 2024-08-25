@@ -24,6 +24,7 @@ class OverworldMap {
       UpperSrc: "IMG/maps/DemoUpper.png",
       gameObjects: {
         hero: new Person({
+          isPlayerControlled: true,
           x: utils.widthGrid(3),
           y: utils.widthGrid(5),
         }),
