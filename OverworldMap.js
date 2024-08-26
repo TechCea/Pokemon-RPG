@@ -10,6 +10,8 @@ class OverworldMap {
   
       this.upperImage = new Image(); // Corrige UpperImage a upperImage
       this.upperImage.src = config.UpperSrc;
+
+      this.isCutscenePlaying = false;
     }
   
     drawLowerImage(ctx, cameraPerson) {
@@ -33,9 +35,12 @@ class OverworldMap {
 
 
     mountObjects(){
-      Object.values(this.gameObjects).forEach(o =>{
+      Object.keys(this.gameObjects).forEach(key =>{
 
-        o.mount(this);
+        let object = this.gameObjects[key];
+        object.id = key;
+
+        object.mount(this);
       })
     }
 
@@ -63,10 +68,28 @@ class OverworldMap {
           x: utils.widthGrid(3),
           y: utils.widthGrid(5),
         }),
-        npc1: new Person({
+        npcA: new Person({
           x: utils.widthGrid(6),
           y: utils.widthGrid(6),
-         src: "IMG/characters/people/npcpoke.png"
+         src: "IMG/Pokemons/DratinyA.png",
+         behaviorLoop:[
+          {type: "stand", direction: "left", time: 800},
+          {type: "stand", direction: "up", time: 800},
+          {type: "stand", direction: "right", time: 1200},
+          {type: "stand", direction: "up", time: 800},
+         ]
+        }),
+        npcB: new Person({
+          x: utils.widthGrid(1),
+          y: utils.widthGrid(9),
+         src: "IMG/Pokemons/DratinyA.png",
+         behaviorLoop: [
+          {type: "walk", direction: "left"},
+          //{type: "stand", direction: "up", time: 800},
+          {type: "walk", direction: "up"},
+          {type: "walk", direction: "right"},
+          {type: "walk", direction: "down"},
+         ]
         })
       },
       walls:{
