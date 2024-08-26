@@ -57,6 +57,9 @@ class OverworldMap {
 
       this.isCutscenePlaying = false;
 
+      //Reset NPC'S to do deir idle behavior
+      Object.values(this.gameObjects).forEach(object => object.doBehaviorEvent(this))
+
     }
 
     addWall(x,y){
