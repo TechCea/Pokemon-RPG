@@ -38,7 +38,7 @@ class GameObject{
         eventConfig.who = this.id;
 
 
-        const eventHandler = new OverworlEvent({ map, event: eventConfig });
+        const eventHandler = new OverworldEvent({ map, event: eventConfig });
         await eventHandler.init();
 
         this.behaviorLoopIndex += 1;

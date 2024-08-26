@@ -1,4 +1,4 @@
-class OverworlEvent{
+class OverworldEvent{
     constructor({map ,event}){
         this.map = map;
         this.event = event;
@@ -36,12 +36,12 @@ class OverworlEvent{
 
         const completeHandler = e =>{
             if (e.detail.whoId === this.event.who) { 
-                document.removeEventListener("PersonWalkinComplete", completeHandler);
+                document.removeEventListener("PersonWalkingComplete", completeHandler);
                 resolve();
             }
         }
 
-        document.addEventListener("PersonWalkinComplete", completeHandler)
+        document.addEventListener("PersonWalkingComplete", completeHandler)
 
     }
 

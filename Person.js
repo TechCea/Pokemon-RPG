@@ -19,7 +19,7 @@ class Person extends GameObject{
         } else {
 
             //Case: we're keyboard ready and have a arrow pressed
-            if (this.isPlayerControlled && state.arrow){
+            if (!state.map.isCutscenePlaying && this.isPlayerControlled && state.arrow){
                 this.startBehavior(state, {
                     type : "walk",
                      direction: state.arrow
@@ -67,7 +67,7 @@ class Person extends GameObject{
 
         if (this.movingProgressRemaining === 0){
             // we finished walk!
-            utils.emitEvent("PersonWalkinComplete", {
+            utils.emitEvent("PersonWalkingComplete", {
                 whoId: this.id
              });             
         }

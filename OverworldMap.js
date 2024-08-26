@@ -11,7 +11,7 @@ class OverworldMap {
       this.upperImage = new Image(); // Corrige UpperImage a upperImage
       this.upperImage.src = config.UpperSrc;
 
-      this.isCutscenePlaying = false;
+      this.isCutscenePlaying = true;
     }
   
     drawLowerImage(ctx, cameraPerson) {
@@ -44,6 +44,21 @@ class OverworldMap {
       })
     }
 
+    async startCutscene(events){
+      this.isCutscenePlaying = true;
+
+      for (let i=0; i<events.length; i++) {
+        const eventHandler = new OverworldEvent({
+          event: events[i],
+          map:this,
+        })
+        await eventHandler.init();
+      }
+
+      this.isCutscenePlaying = false;
+
+    }
+
     addWall(x,y){
       this.walls[`${x},${y}`] = true;
     }
@@ -71,7 +86,7 @@ class OverworldMap {
         npcA: new Person({
           x: utils.widthGrid(6),
           y: utils.widthGrid(6),
-         src: "IMG/Pokemons/DratinyA.png",
+         src: "IMG/Pokemons/Gengar.png",
          behaviorLoop:[
           {type: "stand", direction: "left", time: 800},
           {type: "stand", direction: "up", time: 800},
@@ -80,7 +95,7 @@ class OverworldMap {
          ]
         }),
         npcB: new Person({
-          x: utils.widthGrid(1),
+          x: utils.widthGrid(3),
           y: utils.widthGrid(9),
          src: "IMG/Pokemons/DratinyA.png",
          behaviorLoop: [
