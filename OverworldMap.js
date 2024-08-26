@@ -1,6 +1,9 @@
 class OverworldMap {
     constructor(config) {
       this.gameObjects = config.gameObjects;
+      this.walls = config.walls || {
+
+      }
   
       this.lowerImage = new Image(); // Corrige LowerImage a lowerImage
       this.lowerImage.src = config.LowerSrc;
@@ -9,14 +12,26 @@ class OverworldMap {
       this.upperImage.src = config.UpperSrc;
     }
   
-    drawLowerImage(ctx) {
-      ctx.drawImage(this.lowerImage, 0, 0); // Usa ctx.drawImage
+    drawLowerImage(ctx, cameraPerson) {
+      ctx.drawImage(this.lowerImage, 
+        utils.widthGrid(10.5) - cameraPerson.x,
+        utils.widthGrid(6) - cameraPerson.y
+       ) // Usa ctx.drawImage
     }
   
-    drawUpperImage(ctx) {
-      ctx.drawImage(this.upperImage, 0, 0); // Usa ctx.drawImage
+    drawUpperImage(ctx, cameraPerson) {
+      ctx.drawImage(this.upperImage, 
+        utils.widthGrid(10.5) - cameraPerson.x,
+        utils.widthGrid(6) - cameraPerson.y
+        ) 
+    }
+
+    isSpaceTaken(currentX, currentY, direction){
+      const {x,y} = utils.nextPosition(currentX, currentY, direction);
+      return this.walls[`${x},${y}`] || false;
     }
   }
+  
   
   window.OverworldMaps = {
     DemoRoom: {
@@ -33,6 +48,13 @@ class OverworldMap {
           y: utils.widthGrid(6),
          src: "IMG/characters/people/npcpoke.png"
         })
+      },
+      walls:{
+        //"16,16": true
+        [utils.asGridCoord(7,6)] : true,
+        [utils.asGridCoord(8,6)] : true,
+        [utils.asGridCoord(7,7)] : true,
+        [utils.asGridCoord(8,7)] : true
       }
     },
     Kitchen: {
