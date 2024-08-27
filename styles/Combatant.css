@@ -1,7 +1,7 @@
 .Combatant {
     width: 67px;
     height: 14px;
-    background: url("/IMG/ui/SingleMemberDisplay.png") no-repeat no-repeat;
+    background: url("../IMG/ui/SingleMemberDisplay.png") no-repeat no-repeat;
     position:absolute;
   }
   
@@ -115,7 +115,7 @@
   .Pizza {
     position: absolute;
     transform: scale(2);
-    background: url(/IMG/characters/pizzas/pizza-shadow.png) no-repeat no-repeat;
+    background: url(../IMG/characters/pizzas/pizza-shadow.png) no-repeat no-repeat;
   }
   .Pizza[data-team="player"] {
     bottom: 73px;
