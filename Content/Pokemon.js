@@ -10,13 +10,13 @@ window.PizzaTypes = {
     "s001": {
       name: "Slice Samurai",
       type: PizzaTypes.spicy,
-      src: "IMG/Pokemons/Gengar.gif",
+      src: "../IMG/Pokemons/Gengar.gif",
       icon: "IMG/icons/Ghost.png",
     },
     "v001": {
       name: "Call Me Kale",
       type: PizzaTypes.veggie,
-      src: "IMG/characters/pizzas/v001.png",
+      src: "../IMG/characters/pizzas/v001.png",
       icon: "IMG/icons/veggie.png",
     },
     "f001": {
