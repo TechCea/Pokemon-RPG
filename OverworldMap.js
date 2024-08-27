@@ -1,9 +1,9 @@
 class OverworldMap {
     constructor(config) {
+      this.overworld = null;
       this.gameObjects = config.gameObjects;
-      this.walls = config.walls || {
-
-      }
+      this.cutsceneSpaces = config.cutsceneSpaces || {};
+      this.walls = config.walls || {};
   
       this.lowerImage = new Image(); // Corrige LowerImage a lowerImage
       this.lowerImage.src = config.LowerSrc;
@@ -11,7 +11,7 @@ class OverworldMap {
       this.upperImage = new Image(); // Corrige UpperImage a upperImage
       this.upperImage.src = config.UpperSrc;
 
-      this.isCutscenePlaying = true;
+      this.isCutscenePlaying = false;
     }
   
     drawLowerImage(ctx, cameraPerson) {
@@ -62,6 +62,27 @@ class OverworldMap {
 
     }
 
+    
+    checkForActionCutscene(){
+      const hero = this.gameObjects["hero"];
+      const nextCoords = utils.nextPosition(hero.x, hero.y, hero.direction);
+      const match = Object.values(this.gameObjects).find(object =>{
+        return `${object.x},${object.y}` === `${nextCoords.x},${nextCoords.y}`
+      });
+      if (!this.isCutscenePlaying && match && match.talking.length){
+        this.startCutscene(match.talking[0].events)
+      }
+    }
+
+    checkForFootstepCutscene(){
+      const hero = this.gameObjects["hero"];
+      const match = this.cutsceneSpaces[`${hero.x},${hero.y}`];
+      if (!this.isCutscenePlaying && match){
+        this.startCutscene (match[0].events )
+      }
+    }
+
+    
     addWall(x,y){
       this.walls[`${x},${y}`] = true;
     }
@@ -83,31 +104,40 @@ class OverworldMap {
       gameObjects: {
         hero: new Person({
           isPlayerControlled: true,
-          x: utils.widthGrid(3),
-          y: utils.widthGrid(5),
+          x: utils.widthGrid(5),
+          y: utils.widthGrid(7),
         }),
         npcA: new Person({
-          x: utils.widthGrid(6),
-          y: utils.widthGrid(6),
+          x: utils.widthGrid(8),
+          y: utils.widthGrid(9),
          src: "IMG/Pokemons/Gengar.png",
          behaviorLoop:[
           {type: "stand", direction: "left", time: 800},
           {type: "stand", direction: "up", time: 800},
           {type: "stand", direction: "right", time: 1200},
           {type: "stand", direction: "up", time: 800},
+         ],
+         talking: [
+          {
+            events: [
+              { type: "textMessage", text: "Walter es Pvto", faceHero: "npcA"},
+              { type: "textMessage", text: "no lo sabias?"},
+              { who: "hero", type: "walk", direction: "up"},
+            ]
+          },
          ]
         }),
         npcB: new Person({
-          x: utils.widthGrid(3),
-          y: utils.widthGrid(9),
+          x: utils.widthGrid(8),
+          y: utils.widthGrid(5),
          src: "IMG/Pokemons/DratinyA.png",
-         behaviorLoop: [
-          {type: "walk", direction: "left"},
+         //behaviorLoop: [
+          //{type: "walk", direction: "left"},
           //{type: "stand", direction: "up", time: 800},
-          {type: "walk", direction: "up"},
-          {type: "walk", direction: "right"},
-          {type: "walk", direction: "down"},
-         ]
+          //{type: "walk", direction: "up"},
+          //{type: "walk", direction: "right"},
+          //{type: "walk", direction: "down"},
+         //]
         })
       },
       walls:{
@@ -116,25 +146,51 @@ class OverworldMap {
         [utils.asGridCoord(8,6)] : true,
         [utils.asGridCoord(7,7)] : true,
         [utils.asGridCoord(8,7)] : true
+      },
+      cutsceneSpaces: {
+        [utils.asGridCoord(7,4)] : [
+          {
+            events: [
+              { who: "npcB", type: "walk", direction: "left"},
+              { who: "npcB", type: "stand", direction: "up", time: 100},
+              { type: "textMessage", text: "Regresa mmhuevo"},
+              { who: "npcB", type: "walk", direction: "right"},
+              { who: "npcB", type: "stand", direction: "down"},
+              { who: "hero", type: "walk", direction: "down"},
+              { who: "hero", type: "walk", direction: "left"},
+            ]
+          }
+        ],
+        [utils.asGridCoord(5,10)] : [
+          {
+            events :[
+              { type: "changeMap", map: "Kitchen"}
+            ]
+          }
+        ]
       }
     },
     Kitchen: {
       LowerSrc: "IMG/maps/KitchenLower.png",
       UpperSrc: "IMG/maps/KitchenUpper.png",
       gameObjects: {
-        hero: new GameObject({
-          x: 3,
-          y: 5,
+        hero: new Person({
+          isPlayerControlled: true,
+          x: utils.widthGrid(3),
+          y: utils.widthGrid(5),
         }),
-        npc1: new GameObject({
-          x: 9,
-          y: 6,
-          src: "IMG/characters/people/npcpoke.png"
-        }),
-        npc2: new GameObject({
-          x: 10,
-          y: 4,
-          src: "IMG/characters/people/npc1.png"
+        npcB: new Person({
+          x: utils.widthGrid(10),
+          y: utils.widthGrid(8),
+          src: "IMG/characters/people/npcpoke.png",
+          talking: [
+            {
+              events: [
+                { type: "textMessage", text: "Yepiiiiiii!!!", faceHero: "npcB"},
+
+              ]
+            },
+           ]
         })
       }
     }
