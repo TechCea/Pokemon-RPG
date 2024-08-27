@@ -76,9 +76,10 @@ bindHeroPositionCheck() {
     this.directionInput.init();
     this.startGameLoop(); // Corrige starGameLoop a startGameLoop
 
-    //this.map.startCutscene([
+    this.map.startCutscene([
+      { type: "battle"}
       //{ type: "changeMap", map: "DemoRoom"},
-      //{ type: "textMessage", text: "Walter es Pvtoooooooooooooooooooooo!"},
-    //])
+      //{ type: "textMessage", text: "Hi!"},
+    ])
   }
 }

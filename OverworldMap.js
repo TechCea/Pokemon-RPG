@@ -120,9 +120,7 @@ class OverworldMap {
          talking: [
           {
             events: [
-              { type: "textMessage", text: "Walter es Pvto", faceHero: "npcA"},
-              { type: "textMessage", text: "no lo sabias?"},
-              { who: "hero", type: "walk", direction: "up"},
+              { type: "textMessage", text: "Hola como tas?", faceHero: "npcA"},
             ]
           },
          ]
@@ -153,7 +151,7 @@ class OverworldMap {
             events: [
               { who: "npcB", type: "walk", direction: "left"},
               { who: "npcB", type: "stand", direction: "up", time: 100},
-              { type: "textMessage", text: "Regresa mmhuevo"},
+              { type: "textMessage", text: "Regresa"},
               { who: "npcB", type: "walk", direction: "right"},
               { who: "npcB", type: "stand", direction: "down"},
               { who: "hero", type: "walk", direction: "down"},
