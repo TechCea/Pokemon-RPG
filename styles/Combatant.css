@@ -57,9 +57,8 @@
   .Combatant_type {
     position: absolute;
     left: 3px;
-    top: -2px;
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
   }
   
   .Combatant_life-container {
