@@ -12,7 +12,7 @@ window.PizzaTypes = {
       type: PizzaTypes.spicy,
       src: "IMG/Pokemons/Gengar.gif",
       icon: "IMG/icons/Ghost.png",
-      actions: [ "clumsyStatus", "damage1" ],
+      actions: [ "saucyStatus", "clumsyStatus", "damage1" ],
     },
     "v001": {
       name: "Call Me Kale",
