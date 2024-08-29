@@ -12,7 +12,7 @@ window.PizzaTypes = {
       type: PizzaTypes.spicy,
       src: "IMG/Pokemons/Gengar.gif",
       icon: "IMG/icons/Ghost.png",
-      actions: [ "damage1" ],
+      actions: [ "clumsyStatus", "damage1" ],
     },
     "v001": {
       name: "Call Me Kale",
@@ -29,7 +29,7 @@ window.PizzaTypes = {
       actions: [ "damage1" ],
     },
     "P001": {
-      name: "Gastly",
+      name: "Dratiny",
       type: PizzaTypes.fungi,
       src: "IMG/Pokemons/Datiny.gif",
       icon: "IMG/icons/fungi.png",

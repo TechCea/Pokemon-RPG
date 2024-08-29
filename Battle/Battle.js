@@ -4,12 +4,11 @@ class Battle{
       "player1": new Combatant({
         ...Pizzas.s001,
         team: "player",
-        hp: 100,
+        hp: 80,
         maxHp: 100,
         xp: 75,
         maxXp: 100,
         level: 1,
-        status: null
       }, this),
       "enemy1": new Combatant({
         ...Pizzas.P001,
