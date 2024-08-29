@@ -14,6 +14,14 @@ window.PizzaTypes = {
       icon: "IMG/icons/Ghost.png",
       actions: [ "saucyStatus", "clumsyStatus", "damage1" ],
     },
+    "s002": {
+    name: "Dratiny",
+    description: "A salty warrior who fears nothing",
+    type: PizzaTypes.spicy,
+    src: "IMG/Pokemons/Datiny.gif",
+    icon: "IMG/icons/Ghost.png",
+    actions: [ "damage1", "saucyStatus", "clumsyStatus" ],
+    },
     "v001": {
       name: "Call Me Kale",
       type: PizzaTypes.veggie,
