@@ -14,17 +14,17 @@ class Battle{
       "enemy1": new Combatant({
         ...Pizzas.P001,
         team: "enemy",
-        hp: 20,
-        maxHp: 50,
+        hp: 100,
+        maxHp: 100,
         xp: 20,
         maxXp: 100,
-        level: 1,
+        level: 2,
       }, this),
       "enemy2": new Combatant({
         ...Pizzas.f001,
         team: "enemy",
-        hp: 25,
-        maxHp: 50,
+        hp: 5,
+        maxHp: 100,
         xp: 30,
         maxXp: 100,
         level: 1,
@@ -57,6 +57,17 @@ class Battle{
       combatant.id = key;
       combatant.init(this.element)
     })
+    
+    this.turnCycle = new TurnCycle({
+      battle: this,
+      onNewEvent: event => {
+        return new Promise(resolve => {
+          const battleEvent = new BattleEvent(event, this)
+          battleEvent.init(resolve);
+        })
+      }
+    })
+    this.turnCycle.init();
 
     }
 }
