@@ -1,5 +1,4 @@
 .KeyboardMenu {
-  border: 1px solid var(--border-color);
   background: var(--menu-background);
   position: absolute;
 }
@@ -17,7 +16,8 @@
  padding:0;
  padding-left: 1em;
  font-size: 10px;
- border: solid 1px var(--border-color)
+ border: solid 1px var(--border-color);
+ border-radius: 2px;
 }
 .KeyboardMenu button:focus {
  background: var(--menu-selected-background);

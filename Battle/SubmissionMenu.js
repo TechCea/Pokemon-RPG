@@ -35,7 +35,7 @@ class SubmissionMenu {
         },
         {
           label: "Swap",
-          description: "Change to another pizza",
+          description: "Change to another Pokemon",
           handler: () => { 
             //See pizza options
           }

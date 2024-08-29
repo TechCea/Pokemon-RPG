@@ -1,6 +1,7 @@
 window.Actions = {
     damage1: {
       name: "Shadow Ball",
+      description: "The Darkness Power",
       success: [
         { type: "textMessage", text: "{CASTER} uses {ACTION}!"},
         { type: "animation", animation: "spin"},
@@ -10,6 +11,7 @@ window.Actions = {
     saucyStatus: {
       name: "Tomato Squeeze",
       targetType: "friendly",
+      description: "The Darkness Power",
       success: [
         { type: "textMessage", text: "{CASTER} uses {ACTION}!"},
         { type: "stateChange", status: { type: "saucy", expiresIn: 3 } }
