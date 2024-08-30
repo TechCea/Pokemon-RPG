@@ -62,6 +62,10 @@ class BattleEvent {
     //Wait a little bit
     await utils.wait(600)
 
+     //Update Team components
+     this.battle.playerTeam.update();
+     this.battle.enemyTeam.update();
+     
     //stop blinking
     target.pizzaElement.classList.remove("battle-damage-blink");
     resolve();

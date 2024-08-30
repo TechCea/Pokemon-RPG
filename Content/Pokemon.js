@@ -22,6 +22,13 @@ window.PizzaTypes = {
     icon: "IMG/icons/Dragon.png",
     actions: [ "damage1", "saucyStatus", "clumsyStatus" ],
     },
+    "s003": {
+      name: "Gengar",
+      type: PizzaTypes.spicy,
+      src: "IMG/Pokemons/GengarB.gif",
+      icon: "IMG/icons/Ghost.png",
+      actions: [ "saucyStatus", "clumsyStatus", "damage1" ],
+    },
     "v001": {
       name: "Chandelure",
       type: PizzaTypes.veggie,
