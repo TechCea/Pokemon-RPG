@@ -120,10 +120,11 @@ class OverworldMap {
          talking: [
           {
             events: [
-              { type: "textMessage", text: "Hola como tas?", faceHero: "npcA"},
+              { type: "textMessage", text: "Bahaha!", faceHero: "npcB" },
+              { type: "battle", enemyId: "charmander" }
             ]
-          },
-         ]
+          }
+        ]
         }),
         npcB: new Person({
           x: utils.widthGrid(8),
@@ -136,6 +137,14 @@ class OverworldMap {
           //{type: "walk", direction: "right"},
           //{type: "walk", direction: "down"},
          //]
+         talking: [
+          {
+            events: [
+              { type: "textMessage", text: "Bahaha!", faceHero: "npcB" },
+              { type: "battle", enemyId: "beth" }
+            ]
+          }
+        ]
         })
       },
       walls:{
