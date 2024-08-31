@@ -17,7 +17,7 @@
   pointer-events: none;
 }
 .Battle_hero {
-  bottom: 7px;
+  bottom: -4px;
   left: -8px;
 }
 .Battle_hero img {
