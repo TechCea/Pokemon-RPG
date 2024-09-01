@@ -1,27 +1,27 @@
 window.Enemies = {
-  "charmander": {
-    name: "Charmander",
-    src: "IMG/Pokemons/CharmanderF.gif",
+  "falkern": {
+    name: "Falkern",
+    src: "IMG/characters/people/FalkerN.gif",
     pizzas: {
       "a": {
-        pizzaId: "s001",
+        pizzaId: "P001",
         maxHp: 1,
         level: 1,
       },
       "b": {
-        pizzaId: "s002",
+        pizzaId: "f001",
         maxHp: 1,
         level: 1,
       },
     }
   },
-  "beth": {
-    name: "Beth",
-    src: "/images/characters/people/npc1.png",
+  "bruno": {
+    name: "Bruno",
+    src: "IMG/characters/people/Bruno.gif",
     pizzas: {
       "a": {
         hp: 1,
-        pizzaId: "f001",
+        pizzaId: "P001",
         maxHp: 50,
         level: 1,
       },

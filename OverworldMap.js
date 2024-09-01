@@ -110,7 +110,7 @@ class OverworldMap {
         npcA: new Person({
           x: utils.widthGrid(8),
           y: utils.widthGrid(9),
-         src: "IMG/Pokemons/Gengar.png",
+         src: "IMG/characters/people/FalkernN.png",
          behaviorLoop:[
           {type: "stand", direction: "left", time: 800},
           {type: "stand", direction: "up", time: 800},
@@ -121,7 +121,7 @@ class OverworldMap {
           {
             events: [
               { type: "textMessage", text: "Bahaha!", faceHero: "npcB" },
-              { type: "battle", enemyId: "charmander" }
+              { type: "battle", enemyId: "falkern" }
             ]
           }
         ]
@@ -129,7 +129,7 @@ class OverworldMap {
         npcB: new Person({
           x: utils.widthGrid(8),
           y: utils.widthGrid(5),
-         src: "IMG/Pokemons/DratinyA.png",
+         src: "IMG/characters/people/BrunoN.png",
          //behaviorLoop: [
           //{type: "walk", direction: "left"},
           //{type: "stand", direction: "up", time: 800},
@@ -141,7 +141,7 @@ class OverworldMap {
           {
             events: [
               { type: "textMessage", text: "Bahaha!", faceHero: "npcB" },
-              { type: "battle", enemyId: "beth" }
+              { type: "battle", enemyId: "bruno" }
             ]
           }
         ]
