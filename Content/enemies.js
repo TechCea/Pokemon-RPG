@@ -5,7 +5,8 @@ window.Enemies = {
     pizzas: {
       "a": {
         pizzaId: "P001",
-        maxHp: 1,
+        hp: 1,
+        maxHp: 100,
         level: 1,
       },
       "b": {
@@ -22,7 +23,7 @@ window.Enemies = {
       "a": {
         hp: 1,
         pizzaId: "P001",
-        maxHp: 50,
+        maxHp: 100,
         level: 1,
       },
     }
