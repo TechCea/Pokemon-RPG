@@ -11,7 +11,7 @@ class PlayerState {
         status: { type: "saucy" },
       },
       "p2": {
-        pizzaId: "v001",
+        pizzaId: "P001",
         hp: 50,
         maxHp: 50,
         xp: 75,

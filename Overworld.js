@@ -65,22 +65,26 @@ class Overworld {
   }
  
   init() {
-   this.startMap(window.OverworldMaps.DemoRoom);
- 
- 
-   this.bindActionInput();
-   this.bindHeroPositionCheck();
- 
-   this.directionInput = new DirectionInput();
-   this.directionInput.init();
- 
-   this.startGameLoop();
- 
+
+    this.hud = new Hud();
+    this.hud.init(document.querySelector(".game-container"));
+  
+    this.startMap(window.OverworldMaps.DemoRoom);
+  
+  
+    this.bindActionInput();
+    this.bindHeroPositionCheck();
+  
+    this.directionInput = new DirectionInput();
+    this.directionInput.init();
+  
+    this.startGameLoop();  
+
  
    // this.map.startCutscene([
    //   { type: "battle", enemyId: "beth" }
-   //   // { type: "changeMap", map: "DemoRoom"}
-   //   // { type: "textMessage", text: "This is the very first message!"}
+   //   { type: "changeMap", map: "DemoRoom"}
+   //   { type: "textMessage", text: "This is the very first message!"}
    // ])
  
   }

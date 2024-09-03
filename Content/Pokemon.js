@@ -12,6 +12,7 @@ window.PizzaTypes = {
       type: PizzaTypes.spicy,
       src: "IMG/Pokemons/GengarB.gif",
       icon: "IMG/icons/Ghost.png",
+      hudIcon: "IMG/icons/GengarHUD.png", // Ícono del HUD
       actions: [ "saucyStatus", "clumsyStatus", "damage1" ],
     },
     "s002": {
@@ -32,7 +33,7 @@ window.PizzaTypes = {
     "v001": {
       name: "Chandelure",
       type: PizzaTypes.veggie,
-      src: "IMG/Pokemons/ChandelureF.gif",
+      src: "IMG/Pokemons/GengarB.gif",
       icon: "IMG/icons/veggie.png",
       actions: [ "damage1" ],
     },
@@ -48,6 +49,7 @@ window.PizzaTypes = {
       type: PizzaTypes.fungi,
       src: "IMG/Pokemons/CharmanderF.gif",
       icon: "IMG/icons/Fire.png",
+      hudIcon: "IMG/icons/CharmanderHUD.png", // Ícono del HUD
       actions: [ "damage1" ],
     }
   }
