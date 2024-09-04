@@ -39,7 +39,7 @@ window.PizzaTypes = {
       actions: [ "damage1" ],
     },
     "f001": {
-      name: "Dratiny",
+      name: "Lickwict",
       type: PizzaTypes.fungi,
       src: "IMG/Pokemons/Datiny.gif",
       icon: "IMG/icons/Ice.png",
