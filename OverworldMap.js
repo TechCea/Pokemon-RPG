@@ -120,7 +120,7 @@ class OverworldMap {
          talking: [
           {
             events: [
-              { type: "textMessage", text: "Bahaha!", faceHero: "npcB" },
+              { type: "textMessage", text: "Bahaha!", faceHero: "npcA" },
               { type: "battle", enemyId: "falkern" }
             ]
           }
